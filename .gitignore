@@ -1,0 +1,25 @@
+.DS_Store
+build/
+build-device/
+.build-mac/
+.build-ios/
+.build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+Relay/node_modules/
+.env
+*.p8
+build-ios/
+build-*/
+
+# Private signing and relay material
+*.mobileprovision
+*.provisionprofile
+*.p12
+*.pem
+*.key
+.env.*
+configuration.json
+allowed-rooms
+project.local.yml

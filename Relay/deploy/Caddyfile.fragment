@@ -1,0 +1,8 @@
+# Replace with a hostname you control; merge without replacing other sites.
+# Do not enable access/query or debug logging: tunnel URLs contain credentials.
+relay.example.com {
+    reverse_proxy 127.0.0.1:8787
+    handle_errors {
+        respond "Reach relay temporarily unavailable" 503
+    }
+}

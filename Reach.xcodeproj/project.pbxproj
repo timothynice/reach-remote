@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0214EFDC458E1C414249A437 /* DisplayNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BD71EFD7F9412C59C73F68 /* DisplayNavigation.swift */; };
+		077D5F90162967674B718883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7015BCCC2DF3D95918016F06 /* Assets.xcassets */; };
+		16646BFCA6FA3752995F1D1F /* RemoteDesktopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315524903311E5BA467A8526 /* RemoteDesktopView.swift */; };
+		17A707225C344AE0C741C33A /* VideoDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830958E6B3083FB5787D95B /* VideoDecoder.swift */; };
+		17B1CD0532118D33FA692F9A /* ReachApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2BFF01B160D6D5EF2EA496 /* ReachApp.swift */; };
+		17D8D4FFB2569AE142F9CD09 /* ViewportGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732C92AE84D37F0F94A7EF4F /* ViewportGeometry.swift */; };
+		2CBBB69C2D9FAE86D608B87B /* ReachPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744B396FDBA8E7D1175ED65 /* ReachPeer.swift */; };
+		2E8BB92CA80A107BFB3239A3 /* ReachDiagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C8FCD938C5C48C39BEA56 /* ReachDiagnostics.swift */; };
+		33C342C075056CF312001C36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7015BCCC2DF3D95918016F06 /* Assets.xcassets */; };
+		3F35B05C8A8071E8EEF2E05F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = C0F5200575E00C6A3476C921 /* PrivacyInfo.xcprivacy */; };
+		46081FA0E433DEC4B64C8F75 /* SessionOverlayViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B00EB68CFD99F35B5AA8D64 /* SessionOverlayViews.swift */; };
+		4B7173ED6FA38D994A0DBE5F /* ReachDiagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C8FCD938C5C48C39BEA56 /* ReachDiagnostics.swift */; };
+		4C08554F03AF041857130893 /* ReachDestinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272804C6FFA1E418A2F2C3E7 /* ReachDestinations.swift */; };
+		5441B60BA885FEC81D0942D6 /* PhoneSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B4BFB7EB832101F2761CC2 /* PhoneSession.swift */; };
+		582869794E32218C179D18F0 /* ReachDestinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272804C6FFA1E418A2F2C3E7 /* ReachDestinations.swift */; };
+		6B32BC6729B6849E7521E681 /* SessionRecovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F04DD4587B30C5AEC8DC29C /* SessionRecovery.swift */; };
+		7185E6E34D0B574D853E38C4 /* ScrollRailDynamics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55B97506B7D0470D093A1CC /* ScrollRailDynamics.swift */; };
+		76EFA1388DA83111A0B05702 /* ReachPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744B396FDBA8E7D1175ED65 /* ReachPeer.swift */; };
+		7E3A0549A29238204EFBDE88 /* ReachProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C01E065FAD169DD37DC73 /* ReachProtocol.swift */; };
+		7E64366CFFE1C12BC0A347DE /* RemoteConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB422D3B00058572EF8A73BA /* RemoteConnectionView.swift */; };
+		A08D4D30232F338CF91FE2BD /* DesktopViewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF88A0FC26B4F9874674BA /* DesktopViewport.swift */; };
+		A3960A5BE3E02C4F228C33DE /* DesktopCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393AFFD6F061B7E3A928B3BD /* DesktopCapture.swift */; };
+		A5A66DD9D52D333497A9E540 /* ScrollRailDynamics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55B97506B7D0470D093A1CC /* ScrollRailDynamics.swift */; };
+		A97A38B26F22B4AE88570A5E /* ReachHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3BAF31E6044C615C0766A7 /* ReachHero.swift */; };
+		B47857D17244612E70D2975A /* ReachSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED9E2C775C115ADB02DEB6B /* ReachSecurity.swift */; };
+		B52C52BEF15AFCE9386468F2 /* DesktopScrollTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F44E48AE8EFCF49C0461F /* DesktopScrollTarget.swift */; };
+		B5AB94F0C55DD8E31BBB025A /* DisplayNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BD71EFD7F9412C59C73F68 /* DisplayNavigation.swift */; };
+		BECBCC2C5B6A5D6FE78C0DFE /* DesktopFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FB707E2B79B48E52B5376A /* DesktopFocus.swift */; };
+		D533B0CDFC9DB36E50AF033C /* DesktopInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D5CE2C4193D412DE2DD467 /* DesktopInput.swift */; };
+		D99FCC031CF86E81C053C2A1 /* ReachProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C01E065FAD169DD37DC73 /* ReachProtocol.swift */; };
+		F655C721D635EFD2697F121E /* ReachHostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0580D738ECDF8514D3B0CB /* ReachHostApp.swift */; };
+		FB70E83A259F58C586B8E510 /* ReachSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED9E2C775C115ADB02DEB6B /* ReachSecurity.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0B00EB68CFD99F35B5AA8D64 /* SessionOverlayViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionOverlayViews.swift; sourceTree = "<group>"; };
+		0B7F44E48AE8EFCF49C0461F /* DesktopScrollTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopScrollTarget.swift; sourceTree = "<group>"; };
+		0F04DD4587B30C5AEC8DC29C /* SessionRecovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRecovery.swift; sourceTree = "<group>"; };
+		12BD71EFD7F9412C59C73F68 /* DisplayNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayNavigation.swift; sourceTree = "<group>"; };
+		17AF88A0FC26B4F9874674BA /* DesktopViewport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopViewport.swift; sourceTree = "<group>"; };
+		194C8FCD938C5C48C39BEA56 /* ReachDiagnostics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachDiagnostics.swift; sourceTree = "<group>"; };
+		1D9C01E065FAD169DD37DC73 /* ReachProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachProtocol.swift; sourceTree = "<group>"; };
+		1ED9E2C775C115ADB02DEB6B /* ReachSecurity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachSecurity.swift; sourceTree = "<group>"; };
+		272804C6FFA1E418A2F2C3E7 /* ReachDestinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachDestinations.swift; sourceTree = "<group>"; };
+		315524903311E5BA467A8526 /* RemoteDesktopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDesktopView.swift; sourceTree = "<group>"; };
+		393AFFD6F061B7E3A928B3BD /* DesktopCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopCapture.swift; sourceTree = "<group>"; };
+		39B4BFB7EB832101F2761CC2 /* PhoneSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSession.swift; sourceTree = "<group>"; };
+		46D5CE2C4193D412DE2DD467 /* DesktopInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopInput.swift; sourceTree = "<group>"; };
+		51FB707E2B79B48E52B5376A /* DesktopFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopFocus.swift; sourceTree = "<group>"; };
+		63E15F0975BA8C9BD18987AD /* ReachPhone.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ReachPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B0580D738ECDF8514D3B0CB /* ReachHostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachHostApp.swift; sourceTree = "<group>"; };
+		7015BCCC2DF3D95918016F06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		732C92AE84D37F0F94A7EF4F /* ViewportGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewportGeometry.swift; sourceTree = "<group>"; };
+		AB422D3B00058572EF8A73BA /* RemoteConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConnectionView.swift; sourceTree = "<group>"; };
+		AE8C848A084CC3E94B52A35E /* ReachMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReachMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B55B97506B7D0470D093A1CC /* ScrollRailDynamics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollRailDynamics.swift; sourceTree = "<group>"; };
+		BC3BAF31E6044C615C0766A7 /* ReachHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachHero.swift; sourceTree = "<group>"; };
+		BD2BFF01B160D6D5EF2EA496 /* ReachApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachApp.swift; sourceTree = "<group>"; };
+		C0F5200575E00C6A3476C921 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		C744B396FDBA8E7D1175ED65 /* ReachPeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachPeer.swift; sourceTree = "<group>"; };
+		E830958E6B3083FB5787D95B /* VideoDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDecoder.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0A64B0FA964ACBCA046C28FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE8C848A084CC3E94B52A35E /* ReachMac.app */,
+				63E15F0975BA8C9BD18987AD /* ReachPhone.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EC34285DA68A512772F4577 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				12BD71EFD7F9412C59C73F68 /* DisplayNavigation.swift */,
+				272804C6FFA1E418A2F2C3E7 /* ReachDestinations.swift */,
+				194C8FCD938C5C48C39BEA56 /* ReachDiagnostics.swift */,
+				C744B396FDBA8E7D1175ED65 /* ReachPeer.swift */,
+				1D9C01E065FAD169DD37DC73 /* ReachProtocol.swift */,
+				1ED9E2C775C115ADB02DEB6B /* ReachSecurity.swift */,
+				B55B97506B7D0470D093A1CC /* ScrollRailDynamics.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		814693DBE07BCC37A0ED58FC /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				393AFFD6F061B7E3A928B3BD /* DesktopCapture.swift */,
+				51FB707E2B79B48E52B5376A /* DesktopFocus.swift */,
+				46D5CE2C4193D412DE2DD467 /* DesktopInput.swift */,
+				0B7F44E48AE8EFCF49C0461F /* DesktopScrollTarget.swift */,
+				6B0580D738ECDF8514D3B0CB /* ReachHostApp.swift */,
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
+		E1A390AC27DAF82E3A451D03 = {
+			isa = PBXGroup;
+			children = (
+				7015BCCC2DF3D95918016F06 /* Assets.xcassets */,
+				E482379A0F6E0192405636D7 /* iOS */,
+				814693DBE07BCC37A0ED58FC /* Mac */,
+				7EC34285DA68A512772F4577 /* Shared */,
+				0A64B0FA964ACBCA046C28FA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E482379A0F6E0192405636D7 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				17AF88A0FC26B4F9874674BA /* DesktopViewport.swift */,
+				39B4BFB7EB832101F2761CC2 /* PhoneSession.swift */,
+				C0F5200575E00C6A3476C921 /* PrivacyInfo.xcprivacy */,
+				BD2BFF01B160D6D5EF2EA496 /* ReachApp.swift */,
+				BC3BAF31E6044C615C0766A7 /* ReachHero.swift */,
+				AB422D3B00058572EF8A73BA /* RemoteConnectionView.swift */,
+				315524903311E5BA467A8526 /* RemoteDesktopView.swift */,
+				0B00EB68CFD99F35B5AA8D64 /* SessionOverlayViews.swift */,
+				0F04DD4587B30C5AEC8DC29C /* SessionRecovery.swift */,
+				E830958E6B3083FB5787D95B /* VideoDecoder.swift */,
+				732C92AE84D37F0F94A7EF4F /* ViewportGeometry.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		972D7C19C4BA5A888BA2858F /* ReachPhone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6883A9521AA576A1AB9BA923 /* Build configuration list for PBXNativeTarget "ReachPhone" */;
+			buildPhases = (
+				B9B02D1722DE035BE658E5E6 /* Sources */,
+				BD085267B3EB05D0BDC7D4D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReachPhone;
+			packageProductDependencies = (
+			);
+			productName = ReachPhone;
+			productReference = 63E15F0975BA8C9BD18987AD /* ReachPhone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B32E9892733F01ADB40CB1CE /* ReachMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D87FC56594BAFF8CED1C3A7B /* Build configuration list for PBXNativeTarget "ReachMac" */;
+			buildPhases = (
+				3404C2A44BF7D7ED162549F2 /* Sources */,
+				D6CF566B101B6B2C2CE67A4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReachMac;
+			packageProductDependencies = (
+			);
+			productName = ReachMac;
+			productReference = AE8C848A084CC3E94B52A35E /* ReachMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3109AF0DC53CE8985EA1AC8A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					972D7C19C4BA5A888BA2858F = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					B32E9892733F01ADB40CB1CE = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F2B0D2D08F6B4F43B104FBCD /* Build configuration list for PBXProject "Reach" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = E1A390AC27DAF82E3A451D03;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B32E9892733F01ADB40CB1CE /* ReachMac */,
+				972D7C19C4BA5A888BA2858F /* ReachPhone */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BD085267B3EB05D0BDC7D4D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33C342C075056CF312001C36 /* Assets.xcassets in Resources */,
+				3F35B05C8A8071E8EEF2E05F /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6CF566B101B6B2C2CE67A4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				077D5F90162967674B718883 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3404C2A44BF7D7ED162549F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3960A5BE3E02C4F228C33DE /* DesktopCapture.swift in Sources */,
+				BECBCC2C5B6A5D6FE78C0DFE /* DesktopFocus.swift in Sources */,
+				D533B0CDFC9DB36E50AF033C /* DesktopInput.swift in Sources */,
+				B52C52BEF15AFCE9386468F2 /* DesktopScrollTarget.swift in Sources */,
+				B5AB94F0C55DD8E31BBB025A /* DisplayNavigation.swift in Sources */,
+				582869794E32218C179D18F0 /* ReachDestinations.swift in Sources */,
+				2E8BB92CA80A107BFB3239A3 /* ReachDiagnostics.swift in Sources */,
+				F655C721D635EFD2697F121E /* ReachHostApp.swift in Sources */,
+				2CBBB69C2D9FAE86D608B87B /* ReachPeer.swift in Sources */,
+				D99FCC031CF86E81C053C2A1 /* ReachProtocol.swift in Sources */,
+				FB70E83A259F58C586B8E510 /* ReachSecurity.swift in Sources */,
+				7185E6E34D0B574D853E38C4 /* ScrollRailDynamics.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9B02D1722DE035BE658E5E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A08D4D30232F338CF91FE2BD /* DesktopViewport.swift in Sources */,
+				0214EFDC458E1C414249A437 /* DisplayNavigation.swift in Sources */,
+				5441B60BA885FEC81D0942D6 /* PhoneSession.swift in Sources */,
+				17B1CD0532118D33FA692F9A /* ReachApp.swift in Sources */,
+				4C08554F03AF041857130893 /* ReachDestinations.swift in Sources */,
+				4B7173ED6FA38D994A0DBE5F /* ReachDiagnostics.swift in Sources */,
+				A97A38B26F22B4AE88570A5E /* ReachHero.swift in Sources */,
+				76EFA1388DA83111A0B05702 /* ReachPeer.swift in Sources */,
+				7E3A0549A29238204EFBDE88 /* ReachProtocol.swift in Sources */,
+				B47857D17244612E70D2975A /* ReachSecurity.swift in Sources */,
+				7E64366CFFE1C12BC0A347DE /* RemoteConnectionView.swift in Sources */,
+				16646BFCA6FA3752995F1D1F /* RemoteDesktopView.swift in Sources */,
+				A5A66DD9D52D333497A9E540 /* ScrollRailDynamics.swift in Sources */,
+				46081FA0E433DEC4B64C8F75 /* SessionOverlayViews.swift in Sources */,
+				6B32BC6729B6849E7521E681 /* SessionRecovery.swift in Sources */,
+				17A707225C344AE0C741C33A /* VideoDecoder.swift in Sources */,
+				17D8D4FFB2569AE142F9CD09 /* ViewportGeometry.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2E6BB8CBDB54F8E6DB3B4EF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Config/iOS-Info.plist";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Reach finds your Mac so you can view and control it securely.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = design.timothynice.reach.ios;
+				PRODUCT_NAME = Reach;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4EEDF3FDD2714073507BA241 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Config/Mac-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Reach discovers and securely connects your trusted iPhone or iPad to this Mac.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = design.timothynice.reach.mac;
+				PRODUCT_NAME = Reach;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		59AC623714FE38B80BBE1A9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		746C4A4DC5C2E1A923B930B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Config/Mac-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Reach discovers and securely connects your trusted iPhone or iPad to this Mac.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = design.timothynice.reach.mac;
+				PRODUCT_NAME = Reach;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C58A297AE0BE3DB949A6520B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		EC39FD4EA9289F2B4BA48121 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Config/iOS-Info.plist";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Reach finds your Mac so you can view and control it securely.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = design.timothynice.reach.ios;
+				PRODUCT_NAME = Reach;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6883A9521AA576A1AB9BA923 /* Build configuration list for PBXNativeTarget "ReachPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E6BB8CBDB54F8E6DB3B4EF8 /* Debug */,
+				EC39FD4EA9289F2B4BA48121 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D87FC56594BAFF8CED1C3A7B /* Build configuration list for PBXNativeTarget "ReachMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				746C4A4DC5C2E1A923B930B4 /* Debug */,
+				4EEDF3FDD2714073507BA241 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F2B0D2D08F6B4F43B104FBCD /* Build configuration list for PBXProject "Reach" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59AC623714FE38B80BBE1A9F /* Debug */,
+				C58A297AE0BE3DB949A6520B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3109AF0DC53CE8985EA1AC8A /* Project object */;
+}

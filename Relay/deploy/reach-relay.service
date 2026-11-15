@@ -1,0 +1,35 @@
+[Unit]
+Description=Reach private encrypted desktop relay
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=reach-relay
+Group=reach-relay
+WorkingDirectory=/opt/reach-relay
+ExecStart=/usr/bin/node /opt/reach-relay/server.mjs
+Environment=BIND=127.0.0.1 PORT=8787 REQUIRE_ROOM_ALLOWLIST=1 ROOM_ALLOWLIST_FILE=/etc/reach-relay/allowed-rooms
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=10
+MemoryHigh=192M
+MemoryMax=256M
+CPUQuota=50%
+TasksMax=32
+Nice=10
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+CapabilityBoundingSet=
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
