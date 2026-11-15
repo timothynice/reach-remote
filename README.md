@@ -8,6 +8,10 @@ A native, portrait-first remote desktop for iPhone and iPad, with a lightweight 
 
 Reach runs locally without an account or server. For access across networks, deploy your own small relay once, pair your devices, then select the same saved Mac wherever you are. Reach chooses nearby or relay automatically. No public hosted relay or public TestFlight access is included.
 
+[Watch the 30-second demo](https://github.com/timothynice/reach-remote/releases/download/v0.1.0/Reach-demo-30s.mp4)
+
+<img src="Docs/Media/Reach-demo-poster.png" alt="Reach controlling a safe Mac workspace in a portrait iPhone viewport" width="540">
+
 ## What works
 
 - Native SwiftUI apps; ScreenCaptureKit capture and VideoToolbox H.264 hardware encoding/decoding.
@@ -17,6 +21,10 @@ Reach runs locally without an account or server. For access across networks, dep
 - Multiple monitors with per-display zoom/position; monitor pill or three-finger tap opens the swipe browser.
 - Bonjour discovery, persistent device trust, explicit clipboard controls and automatic local/relay selection.
 - Authenticated end-to-end encrypted desktop/input transport. The custom protocol has **not** had an independent security audit.
+
+## Install
+
+[Download the signed and notarized Mac host](https://github.com/timothynice/reach-remote/releases/tag/v0.1.0), or build it from source. The iPhone/iPad client requires Xcode and your own signing team; there is no App Store install or public TestFlight enrollment. The Mac download has no automatic updater.
 
 ## Build and connect
 
