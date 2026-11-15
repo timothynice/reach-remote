@@ -2,6 +2,7 @@ import AppKit
 import SwiftUI
 
 /// Monochrome version of the desktop-and-phone mark on the iPhone welcome screen.
+@MainActor
 enum ReachMenuIcon {
     static let image: NSImage = {
         let image = NSImage(size: NSSize(width: 23, height: 20), flipped: true) { _ in
