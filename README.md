@@ -10,7 +10,7 @@ Reach runs locally without an account or server. For access across networks, dep
 
 [Watch the 30-second demo](https://github.com/timothynice/reach-remote/releases/download/v0.1.0/Reach-demo-30s.mp4)
 
-<img src="Docs/Media/Reach-demo-poster.png" alt="Reach controlling a safe Mac workspace in a portrait iPhone viewport" width="540">
+<a href="https://github.com/timothynice/reach-remote/releases/download/v0.1.0/Reach-demo-30s.mp4"><img src="Docs/Media/Reach-demo-preview.gif" alt="Reach in action: portrait zoom, hold-to-scroll rail, monitor switching and keyboard. Select to watch the full narrated 30-second video." width="540"></a>
 
 ## What works
 
