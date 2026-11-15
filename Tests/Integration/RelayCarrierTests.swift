@@ -106,8 +106,12 @@ final class LocalCertificatePin: NSObject, URLSessionDelegate, @unchecked Sendab
         try await wait("same Mac selected locally") { host.connected && phone.connected }
         try check(selection.route == .local && phone.remoteIdentity == savedIdentity, "Nearby route wins over waiting relay for the same pinned Mac")
         phone.disconnect(); try await wait("host free before remote selection") { !host.hasActiveTransport }
-        host.connectRelay(url: url, room: room)
-        selection.start(local: nil, relay: { phone.connectRelay(url: url, room: room, expectedIdentity: savedIdentity) })
+        // Local selection abandoned a waiting WSS socket. Its close handshake can still
+        // occupy the old room on a busy CI runner. Isolate this independent selection
+        // case instead of racing cleanup; a deployed allowlisted check keeps its room.
+        let remoteSelectionRoom = publicConfiguration == nil ? ReachPeer.makeRelayRoom() : room
+        host.connectRelay(url: url, room: remoteSelectionRoom)
+        selection.start(local: nil, relay: { phone.connectRelay(url: url, room: remoteSelectionRoom, expectedIdentity: savedIdentity) })
         try await wait("same Mac selected remotely") { host.connected && phone.connected }
         try check(selection.route == .relay && phone.remoteIdentity == savedIdentity, "Same saved identity reconnects remotely when no nearby route exists")
         print(publicConfiguration == nil ? "PASS: Local TLS fixture verified" : "PASS: Public TLS relay verified from this Mac; cellular desktop interaction remains unverified")
