@@ -114,7 +114,10 @@ test('private deployment admits registered rooms and rejects arbitrary rooms', a
   assert.equal(await rejection(`${relay.url}?room=${randomBytes(32).toString('hex')}&role=host`), 403);
   const host = new WebSocket(`${relay.url}?room=${room}&role=host`); await once(host, 'open');
   const ready = once(host, 'message');
-  const client = new WebSocket(`${relay.url}?room=${room}&role=client`); await once(client, 'open'); await ready;
+  const client = new WebSocket(`${relay.url}?room=${room}&role=client`);
+  // Consume both ready frames before asserting on application traffic.
+  const clientReady = once(client, 'message');
+  await once(client, 'open'); await Promise.all([ready, clientReady]);
   const received = once(client, 'message'); host.send(Buffer.from('private'));
   assert.equal((await received)[0].toString(), 'private');
   host.terminate(); client.terminate(); await relay.close();

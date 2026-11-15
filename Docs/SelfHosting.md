@@ -52,7 +52,7 @@ Validate the configuration before reloading your proxy. Do not overwrite unrelat
 
 ## 5. Configure Reach once
 
-Open the private `configuration.json` locally. In the Mac host's **Advanced connection setup**, enter its `url` and `room`, then save. Do not share screenshots of these fields.
+Open the private `configuration.json` locally. In the Mac host's **Settings → Remote Access**, enter its `url` and `room`, then save. Do not share screenshots of these fields.
 
 Connect from your phone/tablet on the local network and compare/approve pairing codes on both devices. The Mac shares its connection profile inside the authenticated encrypted session. Thereafter choose the same saved Mac: Reach tries local access first and falls back to your relay. Alternatively use **Copy invitation** on the Mac and **Add a Mac** on the client for first pairing away from home.
 

@@ -24,7 +24,7 @@ Reach runs locally without an account or server. For access across networks, dep
 
 ## Install
 
-[Download the signed and notarized Mac host](https://github.com/timothynice/reach-remote/releases/tag/v0.1.0), or build it from source. The iPhone/iPad client requires Xcode and your own signing team; there is no App Store install or public TestFlight enrollment. The Mac download has no automatic updater.
+[Download the signed and notarized Mac host](https://github.com/timothynice/reach-remote/releases/tag/v0.1.1), or build it from source. The iPhone/iPad client requires Xcode and your own signing team; there is no App Store install or public TestFlight enrollment. The Mac download has no automatic updater.
 
 ## Build and connect
 
@@ -49,7 +49,7 @@ For unsigned compilation only: `scripts/build.sh` uses your configured signing f
 
 ## Connect from outside your network
 
-Follow [self-hosting](Docs/SelfHosting.md). Configure your relay endpoint and a unique registered room in the Mac's **Advanced connection setup**, then connect locally once to save the connection profile on your phone/tablet. After that, simply select your saved Mac. An invitation is available for initial pairing away from home; treat it as a secret.
+Follow [self-hosting](Docs/SelfHosting.md). Configure your relay endpoint and a unique registered room in the Mac's **Settings → Remote Access**, then connect locally once to save the connection profile on your phone/tablet. After that, simply select your saved Mac. An invitation is available for initial pairing away from home; treat it as a secret.
 
 The Mac must be awake, logged in and online. Reach does not wake a sleeping Mac, bypass secure input, unlock FileVault before login, stream protected content or create a portrait virtual display using private APIs. Remote sessions use an outbound WSS relay; ICE/STUN peer-to-peer traversal is not implemented.
 
@@ -75,3 +75,7 @@ See [architecture](Docs/Architecture.md), [security](SECURITY.md), [known limita
 | `Tests/` | Native and relay integration/regression coverage |
 
 Created by **Timothy Nice**. Contributions are welcome, especially physical iPad testing, Accessibility interoperability, weak-network behavior and security review. MIT applies to original project code and artwork; bundled third-party software retains its own license (see [notices](THIRD_PARTY_NOTICES.md)).
+
+### Mac panel and settings
+
+The menu bar panel sizes to its content and keeps status, pairing, connection and clipboard controls close at hand. Settings opens a separate window for permissions, optional Remote Access, collapsed diagnostics, help and a Danger Zone for forgetting devices. Opening Reach again from Finder shows the compact panel in a normal window. App icons and rounded panel artwork come from `Design/AppIcon.jpg`; regenerate with `swift scripts/make-icon.swift "$PWD"`.
