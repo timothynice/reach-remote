@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.1 — Mac panel refresh
+
+- Updated Mac, iPhone and iPad app artwork; rounded artwork in the Mac panel.
+- Clearer desktop-and-phone menu bar mark and a monitor beside the Mac name.
+- Compact panel that sizes to its content and caps overflow at the screen height.
+- Separate settings window for permissions, optional remote access, help and collapsed diagnostics.
+- Device removal in a Danger Zone with a persistent confirmation sheet; remote removal also confirms.
+- Overlay scrollbars and clearer switch alignment.
+- Fixed an intermittent ready-message race in the relay registry test.
+
 ## 0.1.0 — Developer preview
 
 Initial source release of Reach, a native portrait-first Mac remote desktop client for iPhone and iPad.

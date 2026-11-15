@@ -10,20 +10,21 @@ struct ReachHostApp: App {
     @NSApplicationDelegateAdaptor(HostAppDelegate.self) private var delegate
     @StateObject private var host = HostModel.shared
     var body: some Scene {
-        MenuBarExtra("Reach", systemImage: "rectangle.portrait.and.arrow.right") {
-            ScrollView { HostPanel(host: host) }.scrollIndicators(.visible)
-                .frame(width: 340, height: min(700, (NSScreen.main?.visibleFrame.height ?? 800) - 80))
+        MenuBarExtra {
+            HostPopover(host: host)
+        } label: {
+            Image(nsImage: ReachMenuIcon.image).accessibilityLabel("Reach")
         }.menuBarExtraStyle(.window)
-        Window("Reach", id: "reach-host") {
-            ScrollView { HostPanel(host: host) }.scrollIndicators(.visible)
-                .frame(width: 380, height: min(700, (NSScreen.main?.visibleFrame.height ?? 800) - 80))
-        }.windowResizability(.contentSize)
     }
 }
 
 @MainActor
 final class HostAppDelegate: NSObject, NSApplicationDelegate {
     private var onboarding: NSWindow?
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        HostPanelWindow.shared.show()
+        return true
+    }
     func applicationDidFinishLaunching(_ notification: Notification) {
         #if DEBUG
         if CommandLine.arguments.contains("--scroll-target-smoke") {
@@ -41,19 +42,7 @@ final class HostAppDelegate: NSObject, NSApplicationDelegate {
         #endif
         guard !CGPreflightScreenCaptureAccess() || !AXIsProcessTrusted() || !UserDefaults.standard.bool(forKey: "hostWelcomed") else { return }
         UserDefaults.standard.set(true, forKey: "hostWelcomed")
-        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 400, height: 600),
-                              styleMask: [.titled, .closable, .miniaturizable], backing: .buffered, defer: false)
-        window.title = "Welcome to Reach"
-        let height = min(680, (NSScreen.main?.visibleFrame.height ?? 800) - 100)
-        window.contentView = NSHostingView(rootView: ScrollView {
-            HostPanel(host: HostModel.shared).frame(width: 400)
-        }.scrollIndicators(.visible).frame(width: 400, height: height))
-        window.setContentSize(NSSize(width: 400, height: height))
-        window.isReleasedWhenClosed = false
-        window.center()
-        onboarding = window
-        window.makeKeyAndOrderFront(nil)
-        NSApp.activate(ignoringOtherApps: true)
+        HostPanelWindow.shared.show()
     }
     #if DEBUG
     private func runScrollTargetSmoke() async {
@@ -344,7 +333,6 @@ final class HostModel: ObservableObject {
         peer.startHosting()
         if let config = ReachRelayConfiguration.load() {
             relayURL = config.url.absoluteString
-            relayRoom = config.room
             peer.connectRelay(url: config.url, room: config.room)
         }
         if screenAllowed { Task { await loadDisplays() } }
@@ -549,13 +537,16 @@ final class HostModel: ObservableObject {
         }
     }
 
-    func connectRelay() {
-        guard enabled else { return }
-        guard let url = URL(string: relayURL), url.scheme == "wss" else { status = "Enter a secure wss:// relay URL"; return }
+    @discardableResult
+    func connectRelay() -> Bool {
+        guard enabled else { return false }
+        guard let url = URL(string: relayURL), url.scheme == "wss" else { status = "Enter a secure wss:// relay URL"; return false }
         do { try ReachRelayConfiguration(url: url, room: relayRoom).save() }
-        catch { status = "Could not save relay settings: \(error.localizedDescription)"; return }
+        catch { status = "Could not save relay settings: \(error.localizedDescription)"; return false }
         UserDefaults.standard.set(relayURL, forKey: "relayURL")
         peer.connectRelay(url: url, room: relayRoom)
+        relayRoom = ""
+        return true
     }
 
     func removeRelay() {
@@ -579,111 +570,6 @@ final class HostModel: ObservableObject {
             captureGeneration += 1
             Task { await capture.stop() }
             streaming = false
-        }
-    }
-}
-
-struct HostPanel: View {
-    @ObservedObject var host: HostModel
-    @State private var showRemote = false
-    @State private var confirmRevoke = false
-    @State private var showConnectionHelp = false
-    var body: some View {
-        VStack(alignment: .leading, spacing: 22) {
-            HStack(spacing: 12) {
-                Image(systemName: "rectangle.portrait.and.arrow.right").font(.system(size: 30, weight: .light)).foregroundStyle(.tint)
-                VStack(alignment: .leading, spacing: 3) {
-                    Text("Reach").font(.system(size: 25, weight: .semibold, design: .rounded))
-                    Text("Your Mac. Within reach.").font(.subheadline).foregroundStyle(.secondary)
-                }
-                Spacer()
-                Circle().fill(host.streaming ? Color.green : Color.secondary.opacity(0.4)).frame(width: 7, height: 7)
-            }
-            VStack(alignment: .leading, spacing: 10) {
-                Text(Host.current().localizedName ?? "My Mac").font(.headline)
-                Text(host.enabled ? host.status : "Connections paused").font(.callout).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
-            }
-            if let code = host.peer.pairingCode, host.peer.requiresApproval {
-                VStack(alignment: .leading, spacing: 12) {
-                    Label("Pair your device", systemImage: "lock.shield").font(.headline)
-                    Text("Confirm this code matches Reach on your iPhone or iPad. Only approve a device you recognize.").font(.callout).foregroundStyle(.secondary)
-                    Text(code).font(.system(size: 32, weight: .medium, design: .monospaced)).textSelection(.enabled)
-                    HStack {
-                        Button("Decline") { host.peer.rejectPairing() }
-                        Spacer()
-                        Button("Trust this device") { host.peer.approvePairing() }.buttonStyle(.borderedProminent)
-                    }
-                }.padding(16).background(.quaternary.opacity(0.4), in: RoundedRectangle(cornerRadius: 16))
-            }
-            if !host.screenAllowed || !host.inputAllowed {
-                VStack(alignment: .leading, spacing: 13) {
-                    Text("A little permission. Full freedom.").font(.headline)
-                    permission("Screen Recording", detail: "See your desktop securely on your iPhone or iPad.", allowed: host.screenAllowed, action: host.requestScreen)
-                    permission("Accessibility", detail: "Control your mouse and keyboard remotely.", allowed: host.inputAllowed, action: host.requestInput)
-                }
-            }
-            Divider()
-            Toggle("Allow connections", isOn: Binding(get: { host.enabled }, set: { host.setEnabled($0) }))
-            Toggle("Sync text clipboard", isOn: $host.clipboardEnabled)
-                .help("When enabled, text copied on this Mac is sent to the connected trusted device.")
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Select this Mac in Reach on your iPhone or iPad.").font(.callout)
-                Text("Pair once on the same Wi-Fi. Your device remembers this Mac and chooses the connection automatically.")
-                    .font(.caption).foregroundStyle(.secondary)
-                if ReachRelayConfiguration.load() != nil {
-                    Button("Copy pairing invitation") {
-                        guard let configuration = ReachRelayConfiguration.load() else { return }
-                        var invitation = URLComponents()
-                        invitation.scheme = "reach"; invitation.host = "relay"
-                        invitation.queryItems = [URLQueryItem(name: "url", value: configuration.url.absoluteString), URLQueryItem(name: "room", value: configuration.room)]
-                        NSPasteboard.general.clearContents()
-                        NSPasteboard.general.setString(invitation.string ?? "", forType: .string)
-                    }.font(.caption)
-                }
-            }
-            DisclosureGroup("Advanced connection setup", isExpanded: $showRemote) {
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("Remote access is configured once here, then shared securely with paired devices. Use a registered private room from your relay administrator. Your iPhone or iPad chooses local or remote automatically.")
-                        .font(.caption).foregroundStyle(.secondary)
-                    TextField("Secure relay address", text: $host.relayURL).textFieldStyle(.roundedBorder)
-                    SecureField("Registered private room", text: $host.relayRoom).textFieldStyle(.roundedBorder)
-                    Button("Save connection setup") { host.connectRelay() }.disabled(host.relayURL.isEmpty || host.relayRoom.isEmpty)
-                    Button("Remove remote access setup") { host.removeRelay() }.font(.caption).foregroundStyle(.secondary)
-                    Divider()
-                    Text(host.peer.state).font(.caption).foregroundStyle(.secondary)
-                    if !host.videoDiagnostics.isEmpty { Text(host.videoDiagnostics).font(.caption2).foregroundStyle(.secondary) }
-                }.padding(.top, 10)
-            }.font(.caption)
-            Button("Connection help") { showConnectionHelp = true }.font(.caption)
-                .popover(isPresented: $showConnectionHelp) {
-                    VStack(alignment: .leading, spacing: 12) {
-                        Text("Pair once. Connect anywhere.").font(.headline)
-                        Text("Allow Screen Recording and Accessibility, then open Reach on your iPhone or iPad on the same Wi-Fi. Select this Mac and compare the pairing codes.")
-                        Text("After pairing, select the same saved Mac wherever you are. Reach chooses local access or your configured relay automatically. Keep this Mac awake with Reach running and Allow connections on.")
-                        Text("For first pairing away from home, copy a pairing invitation here and paste it through Add a Mac on your device. Advanced connection setup is only needed to configure or change remote access on this Mac.")
-                        Button("Done") { showConnectionHelp = false }
-                    }.font(.callout).padding(20).frame(width: 330)
-                }
-            Button("Forget all trusted devices…") { confirmRevoke = true }.font(.caption).foregroundStyle(.secondary)
-                .confirmationDialog("Forget all trusted devices?", isPresented: $confirmRevoke) {
-                    Button("Forget devices", role: .destructive) { host.peer.forgetTrustedDevices() }
-                } message: { Text("The current session will end. Each device must be paired again.") }
-            HStack {
-                if host.peer.connected { Button("Disconnect") { host.peer.disconnect() } }
-                Spacer()
-                Button("Quit Reach") { NSApplication.shared.terminate(nil) }.foregroundStyle(.secondary)
-            }.font(.callout)
-        }.padding(22)
-    }
-    private func permission(_ title: String, detail: String, allowed: Bool, action: @escaping () -> Void) -> some View {
-        HStack(alignment: .top, spacing: 12) {
-            Image(systemName: allowed ? "checkmark.circle.fill" : "circle").foregroundStyle(allowed ? Color.green : Color.secondary)
-            VStack(alignment: .leading, spacing: 4) {
-                Text(title).font(.callout.weight(.medium))
-                Text(detail).font(.caption).foregroundStyle(.secondary)
-            }
-            Spacer()
-            if !allowed { Button("Allow", action: action).buttonStyle(.bordered) }
         }
     }
 }
